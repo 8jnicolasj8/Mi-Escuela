@@ -7,6 +7,7 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 });
 
 const nextConfig = {
+  reactStrictMode: true,
   images: {
     domains: [],
     remotePatterns: [
@@ -17,6 +18,9 @@ const nextConfig = {
         pathname: '/media/**',
       },
     ],
+  },
+  experimental: {
+    serverComponentsExternalPackages: ['@radix-ui/react-slot'],
   },
   async rewrites() {
     return [
